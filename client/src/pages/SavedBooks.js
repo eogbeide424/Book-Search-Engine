@@ -15,17 +15,17 @@ import { useQuery, useMutation } from '@apollo/client';
 import { removeBookId } from '../utils/localStorage';
 
 const SavedBooks = () => {
-  const [userData, setUserData] = useState({ savedBooks: [] });
+  const [userData, setUserData] = useState({  });
   const [removeBook, { error }] = useMutation(REMOVE_BOOK);
   const { loading, data } = useQuery(GET_ME);
   const usersData = data.me || [];
 
 
-  useEffect(() => {
-    if (usersData) {
+
+
       setUserData(usersData);
-    }
-  }, [usersData]);
+
+    
 
   if (loading) {
     return <h2>LOADING...</h2>;

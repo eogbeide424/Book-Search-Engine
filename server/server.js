@@ -5,6 +5,7 @@ const { authMiddleware } = require('./utils/auth');
 const path = require('path');
 const db = require('./config/connection');
 const routes = require('./routes');
+require('dotenv').config();
 
 const app = express();
 const PORT = process.env.PORT || 3001;
